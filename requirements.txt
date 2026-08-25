@@ -1,0 +1,10 @@
+torch
+transformers
+sentence-transformers
+spacy
+huggingface-hub
+requests
+numpy
+matplotlib
+tqdm
+python-dotenv

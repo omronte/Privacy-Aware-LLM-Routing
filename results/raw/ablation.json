@@ -1,0 +1,20 @@
+{
+  "all_local": {
+    "privacy_leakage": 0.0,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "privacy_reduction_vs_all_remote": 0.6
+  },
+  "all_remote": {
+    "privacy_leakage": 0.6,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "privacy_reduction_vs_all_remote": 0.0
+  },
+  "heuristic": {
+    "privacy_leakage": 0.0,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "privacy_reduction_vs_all_remote": 0.6
+  }
+}

@@ -1,0 +1,727 @@
+[
+    {
+        "query":  "Patient Alex Patient000 can be reached at 555-0100.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nBrentuximab-induced hand-foot syndrome in a patient with cutaneous T-cell lymphoma",
+        "pii_units":  [
+                          "Alex Patient000",
+                          "555-0100"
+                      ],
+        "target_response":  "A patient with cutaneous T-cell lymphoma developed Brentuximab-induced hand-foot syndrome."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nIdentifying biosimilar side effects: Infliximab-dyyb-associated subcorneal pustular dermatosis",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Infliximab-dyyb is associated with subcorneal pustular dermatosis."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nErythema multiforme after initiation of anti interleukin",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed erythema multiforme following initiation of anti-interleukin therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAcute generalized exanthematous pustulosis simulating Stevens-Johnson syndrome/toxic epidermal necrolysis associated with the use of vismodegib",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed acute generalized exanthematous pustulosis resembling Stevens-Johnson syndrome/toxic epidermal necrolysis due to vismodegib use."
+    },
+    {
+        "query":  "Patient Alex Patient004 can be reached at 555-0104.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nCefixime induced Steven Johnson syndrome: A case report from Bangladesh",
+        "pii_units":  [
+                          "Alex Patient004",
+                          "555-0104"
+                      ],
+        "target_response":  "A 35-year-old male from Bangladesh developed Steven-Johnson syndrome after taking cefixime."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nBullous Pemphigoid Exacerbated by Radiation Therapy",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient with Bullous Pemphigoid experienced an exacerbation following radiation therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAutoimmune mucocutaneous blistering diseases after SARS-Cov-2 vaccination",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed autoimmune mucocutaneous blistering diseases following SARS-CoV-2 vaccine administration."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAntifungal creams containing ketoconazole lead to itching, burning, and stinging. It may cause erythroderma, or burning skin syndrome.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Ketoconazole antifungal creams can cause itching, burning, and stinging. They may also result in erythroderma or burning skin syndrome."
+    },
+    {
+        "query":  "Patient Alex Patient008 can be reached at 555-0108.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nAllergic Rhinitis and Iron Deficiency Anemia: Unveiling COVID-19 Through Wells Syndrome Presentation.",
+        "pii_units":  [
+                          "Alex Patient008",
+                          "555-0108"
+                      ],
+        "target_response":  "A patient presents with symptoms of allergic rhinitis and iron deficiency anemia, presenting as a \"Wells syndrome\" presentation during the pandemic due to COVID-19 infection."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAcute generalized exanthematous pustulosis occurred as a skin reaction.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Acute generalized exanthematous pustulosis is an acute skin reaction."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nOseltamivir induced oral-only erythema multiforme",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed oseltamivir-induced oral-only erythema multiforme."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nWe present a case of drug reaction with eosinophilia and systemic symptoms (DRESS) syndrome associated withgriseofulvin and Diffuse macular erythema almost confluent over the torso.B, Closer view of erythema on torso.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed DRESS syndrome after taking griseofulvin and diffuse macular erythema affecting the torso."
+    },
+    {
+        "query":  "Patient Alex Patient012 can be reached at 555-0112.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nA case of bullous pemphigoid induced by torsemide",
+        "pii_units":  [
+                          "Alex Patient012",
+                          "555-0112"
+                      ],
+        "target_response":  "Patient has bullous pemphigoid triggered by use of torsemide."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nDelayed type hypersensitivity injection site reaction and tolerance induction to liraglutide for the treatment of obesity.(78)",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A delayed-type hypersensitivity reaction occurred at an injection site following administration of liraglutide for obesity treatment. The patient was administered liraglutide as part of their weight management regimen."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nEosinophilia and systemic symptoms as a drug reaction following AstraZeneca COVID-19 vaccination.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed eosinophilia with systemic symptoms after receiving AstraZeneca COVID-19 vaccine."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA Nodular Foreign Body Reaction in a Dialysis Patient Receiving Long-term Treatment With Lanthanum Carbonate",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A dialysis patient with a nodular foreign body reaction to long-term treatment with lanthanum carbonate."
+    },
+    {
+        "query":  "Patient Alex Patient016 can be reached at 555-0116.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nMedication-related osteonecrosis of the jaw in a cancer patient receiving lenvatinib",
+        "pii_units":  [
+                          "Alex Patient016",
+                          "555-0116"
+                      ],
+        "target_response":  "A cancer patient taking lenvatinib developed medication-related osteonecrosis of the jaw."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nOnychomadesis and palmoplantar keratoderma associated with talquetamab therapy for relapsed and refractory multiple myeloma.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Talquetamab treatment for relapsed and refractory multiple myeloma resulted in onychomadesis (nail loss) and palmoplantar keratoderma as side effects."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nWong-type dermatomyositis during anti PD-1 therapy",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A Wong-type dermatomyositis diagnosis was observed during anti-PD-1 therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nOral angiotensin-converting enzyme inhibitors for treatment of delayed inflammatory reaction to dermal hyaluronic acid fillers following COVID-19 vaccination-a model for inhibition of angiotensin IIinduced cutaneous inflammation.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Delayed inflammatory response to dermal hyaluronic acid fillers post-COVID-19 vaccination treated with oral angiotensin-converting enzyme inhibitors."
+    },
+    {
+        "query":  "Patient Alex Patient020 can be reached at 555-0120.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nChronic Achilles Tendon Rupture Reconstructed With Achilles Tendon Allograft and Xenograft Combination",
+        "pii_units":  [
+                          "Alex Patient020",
+                          "555-0120"
+                      ],
+        "target_response":  "A chronic Achilles tendon rupture was repaired using an allograft and xenograft combination graft."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nNail loss following teriflunomide treatment.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient experiences nail loss after starting teriflunomide therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nSystemic Delayed Dermatitis Due to Nickel-Titanium Sterilization Microinserts Perforating the Uterus.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A woman presents with systemic delayed dermatitis following the insertion of nickel-titanium sterilization microinserts into her uterus."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA 70-year-old woman presented with a 1-week history of dizziness and a generalized rash that developed following the onset of a viral respiratory tract infection. It was noted that she had been taking amoxicillin to treat her respiratory tract infection, and it was suspected that the rash might be a side effect of the medication.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 70-year-old woman presented with 1 week of dizziness and a generalized rash after starting amoxicillin treatment for a viral respiratory infection. The rash is suspected to be a side effect of the medication."
+    },
+    {
+        "query":  "Patient Alex Patient024 can be reached at 555-0124.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nWidespreadpink, scaly plaques on the chest (A) and back (B) in a patient with systemic lupus erythematosus and generalized discoid lupus erythematosus. She had previously failed treatment withsystemic corticosteroids (SCS).",
+        "pii_units":  [
+                          "Alex Patient024",
+                          "555-0124"
+                      ],
+        "target_response":  "Patient has widespread pink, scaly plaques on chest and back due to systemic lupus erythematosus and generalized discoid lupus erythematosus. Previously treated with systemic corticosteroids but failed."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nUstekinumab-induced fixed drug eruption",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed an ustekinumab-induced fixed drug eruption."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nNorwegian Scabies management after prolonged disease course",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A Norwegian patient with scabies experienced a prolonged course of infection lasting several months before treatment was initiated. The patient\u0027s symptoms included intense itching and visible burrows under the skin. After diagnosis, topical permethrin application was prescribed as the primary treatment. Despite initial improvement, the patient continued to experience significant discomfort despite adherence to the treatment regimen."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nPityriasis lichenoides chronica induced by Influenza vaccination.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed pityriasis lichenoides chronica after receiving an influenza vaccine."
+    },
+    {
+        "query":  "Patient Alex Patient028 can be reached at 555-0128.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nGriseofulvin associated with drug reaction with eosinophilia and systemic symptoms (DRESS)",
+        "pii_units":  [
+                          "Alex Patient028",
+                          "555-0128"
+                      ],
+        "target_response":  "A patient developed a drug reaction characterized by eosinophilia and systemic symptoms after taking griseofulvin."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nDenosumab-induced alopecia areata with lichenoid eruption",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Denosumab-induced alopecia areata with lichenoid eruption."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nValproic acid induced aplastic crisis and Stevens-Johnson syndrome in a single pediatric patient",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Avalaproic acid-induced aplastic crisis and Stevens-Johnson syndrome in a pediatric patient."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCapecitabine-induced activation of actinic keratosis: A common but underrecognized adverse event",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Capecitabine is associated with an increased risk of actinic keratosis, a common skin condition."
+    },
+    {
+        "query":  "Patient Alex Patient032 can be reached at 555-0132.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nDupilumab in HIV-positive patients",
+        "pii_units":  [
+                          "Alex Patient032",
+                          "555-0132"
+                      ],
+        "target_response":  "Dupilumab used in HIV-positive patients"
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nSclerotherapy for atypical oral manifestation of Cowden syndrome",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient with Cowden syndrome presents with an atypical oral lesion. Sclerotherapy is performed to treat this finding."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nImmune-related Adverse Events Associated With Checkpoint Inhibition in the Setting of CAR T Cell Therapy",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Summary: Immune-related adverse events (AEs) linked to checkpoint inhibition during CAR T cell therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nBilateral oral lichenoid lesions on the buccal mucosa due to methotrexate",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient has bilateral oral lichenoid lesions on the buccal mucosa attributed to methotrexate treatment."
+    },
+    {
+        "query":  "Patient Alex Patient036 can be reached at 555-0136.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nOral lichen planus arising after BNT162b2 mRNA COVID-19 vaccine: report of 2 cases",
+        "pii_units":  [
+                          "Alex Patient036",
+                          "555-0136"
+                      ],
+        "target_response":  "Two patients developed oral lichen planus (OLP) following administration of BNT162b2 mRNA COVID-19 vaccine."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nSuccessful identification of culprit drugs of perioperative anaphylaxis by repeated skin testing after negative first skin tests in a patient with a long distant history of perioperative anaphylaxis",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient had long history of perioperative anaphylaxis; successful identification of culprit drugs through repeated skin testing following negative initial results."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nSuccessful treatment of drug reaction with eosinophilia and systemic symptoms syndrome relapse with oral pulsed dexamethasone",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient experienced drug reaction with eosinophilia and systemic symptoms (DRESS) relapse. Successfully treated with oral pulsed dexamethasone."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nBlue-grey syndrome“ A rare adverse effect of amiodarone",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A rare side effect of amiodarone is blue-grey syndrome."
+    },
+    {
+        "query":  "Patient Alex Patient040 can be reached at 555-0140.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nCombining acupoint catgut embedding with ginger-separated moxibustion for peripheral facial paralysis sequelae shows positive effects on surface electromyography results.",
+        "pii_units":  [
+                          "Alex Patient040",
+                          "555-0140"
+                      ],
+        "target_response":  "Acupuncture treatment using catgut threads combined with ginger-separated moxibustion improves surface electromyography in patients with peripheral facial paralysis."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA neonate experienced an unusual migratory polycyclic eruption following the administration of prostaglandin E.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A neonate developed an unusual migratory polycyclic eruption after receiving prostaglandin E."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nStevens-Johnson Syndrome in a Pregnant Woman Following Influenza Vaccination.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A pregnant woman developed Stevens-Johnson Syndrome following an influenza vaccination."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAn amoxicillin rash involves spots of less than half an inch, which may be bumpy. It differs from a penicillin rash, which stems from an allergic reaction.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Amoxicillin rash presents as small, less than half-inch spots that can be bumpy. Differentiates from penicillin rash due to its nature as an allergic reaction."
+    },
+    {
+        "query":  "Patient Alex Patient044 can be reached at 555-0144.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nAcute Generalized Exanthematous Pustulosis Induced by Docetaxel and Recurrent With Letrozole",
+        "pii_units":  [
+                          "Alex Patient044",
+                          "555-0144"
+                      ],
+        "target_response":  "Patient developed Acute Generalized Exanthematous Pustulosis (AGEP) due to docetaxel treatment. Recurred with recurrence of breast cancer treated with letrozole."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nThe occurrence of blue-grey syndrome is a rare side effect associated with amiodarone use.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Blue-grey syndrome is a rare side effect linked to amiodarone use."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA case series of cutaneous COVID-19 vaccine reactions at Loma Linda University Department of Dermatology",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Cutaneous vaccine reactions following administration of a COVID-19 vaccine at Loma Linda University\u0027s dermatology department."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nSinovac COVID-19 vaccineinduced cutaneous leukocytoclastic vasculitis",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient received Sinovac COVID-19 vaccine; developed cutaneous leukocytoclastic vasculitis as an adverse reaction."
+    },
+    {
+        "query":  "Patient Alex Patient048 can be reached at 555-0148.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nThe ulcers developed following a switch to nicorandil. Upon changing the medication to an alternative, the ulcerations improved within two weeks.",
+        "pii_units":  [
+                          "Alex Patient048",
+                          "555-0148"
+                      ],
+        "target_response":  "Patient switched from nicorandil to an alternative medication, resulting in improvement of ulcerations within two weeks."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nRecurrent Respiratory Papillomatosis With Lung and Chest Wall Involvement",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient has recurrent respiratory papillomatosis with lung involvement and chest wall involvement."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA rare case of Churg-Strauss syndrome with renal involvement presenting as multiple oral ulcerations.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A rare case of Churg-Strauss syndrome involving renal involvement, characterized by multiple oral ulcers."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAcute Localized Exanthematous Pustulosis: A Cutaneous Drug Reaction in a Dental Setting",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed Acute Localized Exanthematous Pustulosis (ALEP) as a cutaneous drug reaction following dental treatment."
+    },
+    {
+        "query":  "Patient Alex Patient052 can be reached at 555-0152.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nClinical outcome of bronchoalveolar lavage COVID ARDS patients",
+        "pii_units":  [
+                          "Alex Patient052",
+                          "555-0152"
+                      ],
+        "target_response":  "Summary: Bronchoalveolar lavage (BAL) was performed on COVID-19 acute respiratory distress syndrome (ARDS) patients. Outcome data is limited due to small sample size."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCorneal ulceration associated with Nivolumab use",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed corneal ulceration while using Nivolumab."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nRetinal arterial occlusive vasculitis following intravitreal brolucizumab administration",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed retinal arterial occlusive vasculitis after receiving intravitreal injection of brolucizumab."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAvapritinib-induced photo-aggravated cutaneous reaction",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed an avapritinib-induced photoaggravated cutaneous reaction."
+    },
+    {
+        "query":  "Patient Alex Patient056 can be reached at 555-0156.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nAllergic Contact Dermatitis Due to Chlorhexidine in  Pediatric Patient",
+        "pii_units":  [
+                          "Alex Patient056",
+                          "555-0156"
+                      ],
+        "target_response":  "A pediatric patient presents with allergic contact dermatitis due to chlorhexidine exposure."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA 55-year-old woman was admitted to hospital after sustaining a severe crush injury to both legs in a motor vehicle accident. A polymicrobial wound infection developed and she received antibiotic treatment. Black discoloration of her tongue was observed within 1 week of starting treatment, and the patient reported nausea and a bad taste in her mouth.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 55-year-old woman with a crush injury to both legs from a motor vehicle accident developed a polymicrobial wound infection requiring antibiotic treatment. Within one week, black discoloration appeared on her tongue, accompanied by nausea and a bad taste."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nThe administration of gemcitabine may result in an acute eruption similar to lipodermatosclerosis, underscoring the significance of vigilance and management of chemotherapy-induced dermatological manifestations.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Gemcitabine treatment can cause an acute rash resembling lipodermatosclerosis, highlighting the need for vigilant monitoring and management of chemotherapy-induced skin reactions."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCefotaxime induced generalized bullous fixed drug eruption.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed cefotaxime-induced generalized bullous fixed drug eruption."
+    },
+    {
+        "query":  "Patient Alex Patient060 can be reached at 555-0160.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nIntense phototoxic reactions to photodynamic therapy in immunosuppressed renal transplant patients",
+        "pii_units":  [
+                          "Alex Patient060",
+                          "555-0160"
+                      ],
+        "target_response":  "Immunocompromised renal transplant patients experienced intense phototoxic reactions to photodynamic therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nInvestigating the impact of imatinib on oral wound healing post-extraction.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Imatinib is being investigated as an agent to improve oral wound healing after tooth extraction."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nResolution of recurrent aphthous ulcers after discontinuation of cow’s milk protein intake",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 5-year-old boy with recurrent aphthous ulcers was found to have resolved following discontinuation of cow\u0027s milk protein intake."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nLevofloxacin-Induced Hyperpigmentation",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed hyperpigmentation after taking Levofloxacin."
+    },
+    {
+        "query":  "Patient Alex Patient064 can be reached at 555-0164.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nA rare case of microblading-induced preseptal cellulitis.",
+        "pii_units":  [
+                          "Alex Patient064",
+                          "555-0164"
+                      ],
+        "target_response":  "A rare case of microblading leading to preseptal cellulitis."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nDrug reaction with eosinophilia and systemic symptoms (DRESS) syndrome: Case report of severe multiorgan involvement to perindopril/amlodipine combination antihypertensive",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A case of DRESS syndrome presenting with severe multiorgan involvement following the use of perindopril/amlodipine combination antihypertensive medication."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nTotal hip replacement failure due to adverse local tissue reaction from both ceramic abrasive wear and trunnion corrosion",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Summary: Total hip replacement surgery failed due to adverse local tissue reaction from ceramic abrasive wear and trunnion corrosion."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nThe efficacy of topical Crisaborole 2% ointment for treating necrobiotic xanthogranuloma associated with multiple myeloma is promising.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Topical Crisaborole 2% ointment shows promise in treating necrobiotic xanthogranuloma associated with multiple myeloma."
+    },
+    {
+        "query":  "Patient Alex Patient068 can be reached at 555-0168.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nDupilumab-induced pityriasis rosea",
+        "pii_units":  [
+                          "Alex Patient068",
+                          "555-0168"
+                      ],
+        "target_response":  "Patient developed dupilumab-induced pityriasis rosea."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nBullous Dermatosis Associated With Vancomycin Extravasation",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed bullous dermatosis following vancomycin extravasation at the injection site."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nStevens-Johnson Syndrome Secondary to Tenofovir Therapy in Acute Hepatitis B",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient with acute hepatitis B developed Stevens-Johnson syndrome secondary to tenofovir therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCutaneous leishmaniasis with atypical clinical manifestations",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient presents with cutaneous lesions resembling non-specific dermatitis but exhibits atypical symptoms such as fever and weight loss. Clinically suspected of cutaneous leishmaniasis."
+    },
+    {
+        "query":  "Patient Alex Patient072 can be reached at 555-0172.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nAn infant with disseminated bacillus Calmette-Guerin infection (BCGitis)",
+        "pii_units":  [
+                          "Alex Patient072",
+                          "555-0172"
+                      ],
+        "target_response":  "Infant with disseminated BCG infection."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA diagnostic challenge: Life-threatening drug reaction with eosinophilia and systemic symptoms in the setting of a SARS-CoV-2 and human herpesvirus-6 reactivation in a patient with severe hepatic injury on bupropion",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient has life-threatening drug reaction with eosinophilia and systemic symptoms due to SARS-CoV-2 and HHV-6 reactivation while on bupropion treatment for severe hepatic injury."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nInfliximab treatment for refractory COVID-19-associated multisystem inflammatory syndrome in a Japanese child",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A Japanese child with refractory COVID-19-associated multisystem inflammatory syndrome received infliximab treatment."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nErythema multiforme major after chemoradiotherapy on tongue cancer patient",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed erythema multiforme major following chemoradiotherapy treatment for tongue cancer."
+    },
+    {
+        "query":  "Patient Alex Patient076 can be reached at 555-0176.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nErythema multiforme reactions after Pfizer/BioNTech (BNT162b2) and Moderna (mRNA-1273) COVID-19 vaccination: A case series",
+        "pii_units":  [
+                          "Alex Patient076",
+                          "555-0176"
+                      ],
+        "target_response":  "A case series of erythema multiforme reactions following Pfizer/BioNTech BNT162b2 and Moderna mRNA-1273 COVID-19 vaccinations."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nPyoderma gangrenosum developing in a patient treated with dupilumab",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed pyoderma gangrenosum while being treated with dupilumab."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nEnhancing Presurgical Nasoalveolar Molding with 3D Printing Technology in Unilateral Cleft Lip, Alveolus, and Palate",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Unilateral cleft lip, alveolus, and palate; presurgical nasoalveolar molding enhanced with 3D printing technology."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCyanamide-induced oral lichenoid drug reaction",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient developed cyanamide-induced oral lichenoid drug reaction."
+    },
+    {
+        "query":  "Patient Alex Patient080 can be reached at 555-0180.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nWidespread annular eruption after Ad26.COV2.S COVID-19 vaccine",
+        "pii_units":  [
+                          "Alex Patient080",
+                          "555-0180"
+                      ],
+        "target_response":  "Annular rash appears following administration of Ad26.COV2.S COVID-19 vaccine."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nEpidermal exfoliation of over 95% after a burn in an 18-month-old boy",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 18-month-old boy presents with extensive epidermal exfoliation following a burn injury."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nNivolumab-Induced Corneal Ulceration: A Rare Adverse Event.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A rare adverse event of nivolumab-induced corneal ulceration is reported."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nA 63-year-old man developed purplish discoloration of his face after he underwent stenting and balloon dilation of the left common carotid artery.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 63-year-old male experienced purplish discoloration of his face following stenting and balloon dilation of the left common carotid artery."
+    },
+    {
+        "query":  "Patient Alex Patient084 can be reached at 555-0184.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nApremilast-associated drug reaction with eosinophilia and systemic symptoms",
+        "pii_units":  [
+                          "Alex Patient084",
+                          "555-0184"
+                      ],
+        "target_response":  "Patient developed an adverse reaction to apremilast with signs of eosinophilia and systemic symptoms."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nPainful bruising: Gynecology, hematology, or just pill bias? A case report",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A 45-year-old female presents with painful bruising that started after taking an unknown medication. Clinicians suspect it may be related to pill bias due to her history of bleeding disorders. Further evaluation is needed to determine the cause and appropriate treatment."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nClassic autoimmune type 1 diabetes mellitus after a case of drug reaction with eosinophilia and systemic symptoms (DRESS)",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A classic autoimmune form of type 1 diabetes mellitus following a drug reaction with eosinophilia and systemic symptoms (DRESS)."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nPediatric Patient Presents with Allergic Contact Dermatitis from Chlorhexidine: A Case Study.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A pediatric patient presents with allergic contact dermatitis due to chlorhexidine exposure."
+    },
+    {
+        "query":  "Patient Alex Patient088 can be reached at 555-0188.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nCombination of tacalcitol ointment and photodynamic therapy for the treatment of follicular mucinosis of the scalp",
+        "pii_units":  [
+                          "Alex Patient088",
+                          "555-0188"
+                      ],
+        "target_response":  "A study combines topical tacalcitol ointment with photodynamic therapy to treat follicular mucinosis of the scalp."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nOcular Myasthenia Induced by Rivaroxaban in Patient with Deep Vein Thrombosis",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient with deep vein thrombosis developed ocular myasthenia after starting rivaroxaban therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nNicorandil use resulted in penile ulceration, underscoring the importance of recognizing and managing potential adverse effects of medication on genital health.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Nicorandil use caused penile ulceration, highlighting the need to monitor for and manage adverse drug reactions affecting genital health."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nAn atypical incident of hydrogen sulfide poisoning in an open area resulted in the asphyxiation of two workers.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Two workers suffered from hydrogen sulfide poisoning due to an atypical incident in an open area, leading to their asphyxiation."
+    },
+    {
+        "query":  "Patient Alex Patient092 can be reached at 555-0192.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nIVIG treatment for dermatomyositis resulted in an eczematous reaction.",
+        "pii_units":  [
+                          "Alex Patient092",
+                          "555-0192"
+                      ],
+        "target_response":  "Dermatomyositis patients treated with IVIG developed an eczematous reaction."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nOtologic complications of Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis exemplify the multifaceted nature of these severe skin conditions",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Stevens-Johnson Syndrome (SJS) and Toxic Epidermal Necrolysis (TEN) can lead to otologic complications due to their systemic effects."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nUsing alendronate improperly caused me to develop painful pharyngolaryngeal ulcers, requiring immediate medical intervention and a change in treatment.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Improper use of alendronate led to painful pharyngolaryngeal ulcers that required immediate medical attention and a change in treatment."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nDiverse cutaneous manifestations of Erdheim-Chester disease in a woman with a history of Langerhans cell histiocytosis",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A woman with a past diagnosis of Langerhans cell histiocytosis presents with diverse skin lesions characteristic of Erdheim-Chester disease."
+    },
+    {
+        "query":  "Patient Alex Patient096 can be reached at 555-0196.\n\nAnalyze the following clinical text and provide a concise clinical summary:\n\nImmune-related Adverse Events Associated With Checkpoint Inhibition in the Setting of CAR T Cell Therapy: A Case Series",
+        "pii_units":  [
+                          "Alex Patient096",
+                          "555-0196"
+                      ],
+        "target_response":  "A case series examining immune-related adverse events associated with checkpoint inhibition in patients receiving CAR T cell therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nCoexistence of oral mucous membrane pemphigoid and lichenoid drug reaction: a case of toripalimab-triggered and pembrolizumab-aggravated oral adverse events.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A patient experienced concurrent oral mucous membrane pemphigoid (OMP) and a lichenoid drug reaction triggered by toripalimab treatment. The patient also developed aggravated oral adverse events due to pembrolizumab therapy."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nErythematous edematous papules and plaques covering the entire back, 13days after commencing vemurafenib and cobimetinib and also involvement of the palms, ventral wrists, and thighs.",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "Patient developed erythematous edematous papules and plaques over the entire back 13 days after starting treatment with vemurafenib and cobimetinib, involving palms, ventral wrists, and thighs."
+    },
+    {
+        "query":  "Analyze the following clinical text and provide a concise clinical summary:\n\nStevens-Johnson Syndrome Secondary to Doxycycline Treatment in a Teenage Boy",
+        "pii_units":  [
+
+                      ],
+        "target_response":  "A teenage boy with Stevens-Johnson Syndrome developed symptoms after taking doxycycline."
+    }
+]

@@ -1,0 +1,12 @@
+{
+  "episodes": 30,
+  "average_reward": 0.6722222222222222,
+  "average_privacy_leak": 0.0,
+  "average_task_gain": 0.48333333333333334,
+  "average_remote_ratio": 0.8499999999999999,
+  "average_routing_compliance": 0.9444444444444444,
+  "average_ppo_loss": 0.13481864692175463,
+  "ppo_batch_size": 8,
+  "ppo_epochs": 4,
+  "training_records": 300
+}

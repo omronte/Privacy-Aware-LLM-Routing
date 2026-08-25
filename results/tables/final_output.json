@@ -1,0 +1,60 @@
+{
+  "device": "cpu",
+  "dataset_sizes": {
+    "train": 30,
+    "validation": 10,
+    "test": 10
+  },
+  "training": {
+    "steps_requested": 3,
+    "episodes_completed": 3,
+    "summary": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_summary.json",
+    "model": "models\\privacy_r1_agent.pt"
+  },
+  "test_evaluation": {
+    "all_local": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0
+    },
+    "all_remote": {
+      "privacy_leakage": 0.6,
+      "task_gain": 0.0,
+      "reward": 0.0
+    },
+    "heuristic": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0
+    }
+  },
+  "ablation": {
+    "all_local": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "privacy_reduction_vs_all_remote": 0.6
+    },
+    "all_remote": {
+      "privacy_leakage": 0.6,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "privacy_reduction_vs_all_remote": 0.0
+    },
+    "heuristic": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "privacy_reduction_vs_all_remote": 0.6
+    }
+  },
+  "files": {
+    "training_csv": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_training.csv",
+    "training_summary": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_summary.json",
+    "model_checkpoint": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\models\\privacy_r1_agent.pt",
+    "reward_curve": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\figures\\reward_curve.png",
+    "test_evaluation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\test_evaluation.json",
+    "ablation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ablation.json",
+    "validation_evaluation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\validation_evaluation.json"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "all_local": {
+    "privacy_leakage": 0.0,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "remote_routing_ratio": 0.0
+  },
+  "all_remote": {
+    "privacy_leakage": 0.25,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "remote_routing_ratio": 1.0
+  },
+  "heuristic": {
+    "privacy_leakage": 0.0,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "remote_routing_ratio": 0.75
+  }
+}

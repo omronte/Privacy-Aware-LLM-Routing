@@ -23,6 +23,18 @@ The framework optimizes multiple objectives:
 - Task performance
 - Routing compliance
 - Remote model utilization
+
+---
+
+## Research Highlights
+
+- Designed a chunk-level privacy-aware routing framework for hybrid local/remote LLM inference.
+- Combined PII detection with a transformer-based actor-critic routing policy.
+- Used supervised warm-up to initialize the policy before PPO fine-tuning.
+- Designed a reward function incorporating privacy leakage, task gain, routing compliance, and remote usage.
+- Implemented a hard privacy constraint that overrides learned actions for PII-sensitive chunks.
+- Included evaluation and ablation utilities for analyzing routing behavior.
+
 ---
 
 ## Overview
@@ -113,6 +125,14 @@ The pipeline:
                     ▼
                PPO Training
 ```
+
+---
+
+### Routing Decision
+
+The transformer policy produces a candidate routing action for each chunk. A hard privacy layer then verifies the routing decision. If a chunk is identified as PII-sensitive, the final action is forced to **LOCAL**, overriding the learned action.
+
+This separates **policy learning** from **privacy enforcement**.
 
 ---
 
@@ -505,21 +525,28 @@ python test_remote.py
 
 # Results
 
-The repository includes the evaluation outputs and visualizations from the recorded experimental run.
+The project includes visualizations from the recorded training and evaluation runs.
+
+The evaluation analyzes:
+
+- Privacy leakage
+- Routing compliance
+- Remote routing ratio
+- Reward progression
+- Task gain
+- Ablation behavior
+
+These visualizations are provided to illustrate the behavior of the implemented routing policy across the recorded experiments.
 
 ## Privacy Leakage
 
 ![Privacy Leakage](results/figures/privacy_leak_curve.png)
 
-Measures the privacy leakage observed during the recorded evaluation/training run.
-
 ---
 
 ## Remote Routing Ratio
 
-![Remote Routing Ratio](results/figures/remote_ratio_curve.png)
-
-Shows the proportion of routing decisions sent to the remote model during the recorded run.
+![Remote Routing Ratio](results/figures/remote_ratio_curve.png) 
 
 ---
 
@@ -527,15 +554,11 @@ Shows the proportion of routing decisions sent to the remote model during the re
 
 ![Reward](results/figures/reward_curve.png)
 
-Shows the reward progression during PPO training.
-
 ---
 
 ## Routing Compliance
 
 ![Routing Compliance](results/figures/routing_compliance_curve.png)
-
-Measures compliance with the intended privacy-aware routing policy.
 
 ---
 
@@ -543,15 +566,13 @@ Measures compliance with the intended privacy-aware routing policy.
 
 ![Task Gain](results/figures/task_gain_curve.png)
 
-Shows the task-performance component of the routing objective during training.
-
-> **Important:** These plots represent results from the included experimental run. They should not be interpreted as formal guarantees of privacy, utility, or generalization to unseen datasets.
+> **Note:** The visualizations represent results from the included experimental runs. They are provided for demonstration and reproducibility purposes and should not be interpreted as formal guarantees of privacy, utility, or generalization.
 
 ---
 
 # Trained Model
 
-A trained routing-agent checkpoint is included at:
+A trained Privacy-R1 routing-agent checkpoint is included at:
 
 ```text
 models/privacy_r1_agent.pt

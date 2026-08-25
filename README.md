@@ -2,15 +2,27 @@
 
 A privacy-aware LLM routing framework that dynamically routes sensitive and non-sensitive text chunks between local and remote LLM inference.
 
-The project is inspired by the **Privacy-R1** approach and implements a complete pipeline combining PII detection, privacy-aware preprocessing, transformer-based routing, supervised warm-up, and PPO reinforcement learning.
+Inspired by the Privacy-R1 approach, this project combines PII detection, privacy-aware preprocessing, transformer-based actor-critic policy learning, supervised warm-up, and PPO reinforcement learning.
 
 The routing objective is:
 
 - **PII-containing chunks → LOCAL**
 - **Non-PII chunks → REMOTE**
 
-The system is designed to balance privacy protection, task performance, routing compliance, and practical use of remote LLM inference.
+The system is designed to balance privacy protection, task performance, routing compliance, and practical remote LLM utilization.
 
+## Why this project
+
+Sending prompts to remote LLM providers can expose sensitive information when inputs contain personally identifiable information (PII).
+
+This project addresses the problem through privacy-aware, chunk-level routing. Sensitive chunks are identified before routing, and a hard privacy constraint ensures that PII-sensitive chunks remain local while the learned policy determines routing behavior for suitable non-sensitive content.
+
+The framework optimizes multiple objectives:
+
+- Privacy leakage minimization
+- Task performance
+- Routing compliance
+- Remote model utilization
 ---
 
 ## Overview
@@ -66,7 +78,7 @@ The pipeline:
                 Text Preprocessing
                          │
                          ▼
-                  Chunking
+                     Chunking
                          │
                          ▼
               PII / Sensitive Entity

@@ -1,5 +1,7 @@
 ﻿"""Deterministic routing baselines."""
 
+from src.privacy import contains_pii
+
 
 def all_local_actions(chunks):
     """Route every chunk to the local model."""
@@ -20,12 +22,6 @@ def heuristic_actions(chunks, pii_entities):
     actions = []
 
     for chunk in chunks:
-        chunk_lower = chunk.lower()
-        contains_pii = any(
-            str(pii).strip().lower() in chunk_lower
-            for pii in pii_entities
-            if str(pii).strip()
-        )
-        actions.append(0 if contains_pii else 1)
+        actions.append(0 if contains_pii(chunk, pii_entities) else 1)
 
     return actions

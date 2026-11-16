@@ -1,4 +1,4 @@
-﻿"""Fast unit test for the Phase 5 privacy routing boundary."""
+"""Fast unit test for the Phase 5 privacy routing boundary."""
 
 from pathlib import Path
 import sys
@@ -60,6 +60,12 @@ def main():
     print("Remote chunks     :", remote_chunks)
     print("Result            : PASS")
     print("=" * 60)
+    return 0
+
+
+def test_routing_boundary():
+    """Pytest entrypoint for the routing boundary test."""
+    main()
 
 
 if __name__ == "__main__":

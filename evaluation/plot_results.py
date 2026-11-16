@@ -5,7 +5,9 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
+# pyrefly: ignore[missing-import]
 import matplotlib.pyplot as plt
+# pyrefly: ignore[missing-import]
 import numpy as np
 
 

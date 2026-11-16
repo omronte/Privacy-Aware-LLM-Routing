@@ -1,8 +1,12 @@
-﻿from pathlib import Path
+from pathlib import Path
 import sys
+# pyrefly: ignore[missing-import]
 import torch
+# pyrefly: ignore[missing-import]
+from dotenv import load_dotenv
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(ROOT_DIR / ".env")
 
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -227,6 +231,12 @@ def main():
     print("\n" + "=" * 60)
     print("ALL SANITY TESTS PASSED")
     print("=" * 60)
+    return 0
+
+
+def test_sanity():
+    """Pytest entrypoint for the sanity pipeline test."""
+    main()
 
 
 if __name__ == "__main__":

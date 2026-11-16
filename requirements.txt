@@ -10,3 +10,4 @@ tqdm
 python-dotenv
 datasets
 presidio-analyzer
+pytest

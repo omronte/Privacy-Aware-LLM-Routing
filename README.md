@@ -255,11 +255,14 @@ Privacy-Aware-LLM-Routing/
 │
 ├── evaluation/
 │   ├── ablation.py
+│   ├── baselines.py
 │   ├── evaluate.py
+│   ├── merge_evaluations.py
 │   ├── metrics.py
 │   ├── plot_results.py
 │   ├── routing_test.py
 │   ├── sanity_test.py
+│   ├── split_dataset.py
 │   └── validate_dataset.py
 │
 ├── models/
@@ -277,6 +280,7 @@ Privacy-Aware-LLM-Routing/
 │   ├── ppo_summary.json
 │   ├── ppo_training.csv
 │   ├── routing_evaluation.json
+│   ├── test_end_to_end.json
 │   ├── test_evaluation.json
 │   ├── validation_evaluation.json
 │   └── final_output.json
@@ -285,13 +289,18 @@ Privacy-Aware-LLM-Routing/
 │   └── prepare_clinical_data.py
 │
 ├── src/
+│   ├── openai_compatible.py
 │   ├── phase1_dataset.py
 │   ├── phase2_preprocessing.py
 │   ├── phase3_agent.py
 │   ├── phase4_reward.py
 │   ├── phase5_rollout.py
 │   ├── phase6_warmup.py
-│   └── phase7_ppo.py
+│   ├── phase7_ppo.py
+│   └── privacy.py
+│
+├── tests/
+│   └── test_privacy.py
 │
 ├── .env.example
 ├── .gitignore
@@ -347,9 +356,11 @@ python -m spacy download en_core_web_sm
 
 ---
 
-# Hugging Face Token Setup
+# Remote Provider Setup
 
-The project uses a Hugging Face token for remote model access.
+The project supports Hugging Face or any OpenAI-compatible provider. An
+OpenAI-compatible provider is preferred when Hugging Face inference credits are
+unavailable.
 
 ## 1. Create `.env`
 
@@ -372,6 +383,18 @@ Then edit `.env`:
 ```env
 HF_TOKEN=your_huggingface_token_here
 ```
+
+For the selected Groq provider, set these values instead:
+
+```env
+LLM_API_KEY=your_groq_api_key_here
+LLM_API_BASE=https://api.groq.com/openai/v1
+REMOTE_MODEL=openai/gpt-oss-120b
+JUDGE_MODEL=allam-2-7b
+```
+
+The provider must expose an OpenAI-compatible `/chat/completions` endpoint and
+support the selected model. Do not commit `.env` or any real API key.
 
 Replace the placeholder with your own Hugging Face access token.
 
@@ -453,6 +476,7 @@ python main.py --steps 300 --warmup-epochs 1 --ppo-batch-size 8 --ppo-epochs 4
 --train-file data/train.json
 --skip-warmup
 --no-debug-rollout
+--seed 42
 ```
 
 For all available arguments:
@@ -489,13 +513,48 @@ python evaluation/routing_test.py
 python evaluation/evaluate.py data/validation.json --output results/validation_evaluation.json
 ```
 
+Evaluate the saved routing checkpoint on the held-out test set. This uses the
+production sentence chunker, the shared PII detector, and deterministic action
+selection after the hard privacy constraint:
+
+```bash
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/test_evaluation.json
+```
+
+To measure generated-answer quality as well as routing metrics, add
+`--with-task-gain`. This requires Hugging Face access and runs the local model,
+remote model, and remote judge:
+
+```bash
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --with-task-gain --output results/raw/test_end_to_end.json
+```
+
+Large evaluations can be resumed in disjoint batches. Run the first and second
+halves separately, then merge them:
+
+```bash
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --with-task-gain --start-index 0 --max-samples 50 --output results/raw/test_remote_000_050.json
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --with-task-gain --start-index 50 --max-samples 50 --output results/raw/test_remote_050_100.json
+python -m evaluation.merge_evaluations results/raw/test_remote_000_050.json results/raw/test_remote_050_100.json --output results/raw/test_end_to_end.json
+```
+
+When Hugging Face inference credits are unavailable, use the local fallback.
+It uses the local model for both routes and MiniLM similarity for task scoring:
+
+```bash
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --with-task-gain --offline-task-gain --output results/raw/test_offline_end_to_end.json
+```
+
 ---
 
 ## 4. Ablation Analysis
 
 ```bash
-python evaluation/ablation.py data/test.json --output results/ablation.json
+python evaluation/ablation.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/ablation.json
 ```
+
+The ablation report includes privacy leakage, remote routing ratio, routing
+compliance, and privacy reduction relative to all-remote routing.
 
 ---
 
@@ -519,6 +578,12 @@ python evaluation/plot_results.py
 
 ```bash
 python test_remote.py
+```
+
+## 8. Automated Privacy Tests
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ---
@@ -546,7 +611,7 @@ These visualizations are provided to illustrate the behavior of the implemented 
 
 ## Remote Routing Ratio
 
-![Remote Routing Ratio](results/figures/remote_ratio_curve.png) 
+![Remote Routing Ratio](results/figures/remote_ratio_curve.png)
 
 ---
 

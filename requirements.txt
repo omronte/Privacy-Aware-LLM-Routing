@@ -8,3 +8,5 @@ numpy
 matplotlib
 tqdm
 python-dotenv
+datasets
+presidio-analyzer

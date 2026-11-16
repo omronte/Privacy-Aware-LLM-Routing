@@ -273,6 +273,7 @@ def run_ppo_training(
     routing_policy=None,
     local_action=0,
     remote_action=1,
+    seed=42,
 ):
     """Run PPO over the supplied training set and save reproducible outputs."""
     if not dataset:
@@ -311,7 +312,7 @@ def run_ppo_training(
         f"using {len(dataset)} training records..."
     )
 
-    rng = np.random.default_rng(42)
+    rng = np.random.default_rng(seed)
     training_indices = rng.permutation(len(dataset))
 
     for step in tqdm(range(num_steps), desc="PPO Training"):
@@ -471,6 +472,7 @@ def run_ppo_training(
         "ppo_batch_size": ppo_batch_size,
         "ppo_epochs": ppo_epochs,
         "training_records": len(dataset),
+        "seed": seed,
     }
 
     summary_path = raw_path / "ppo_summary.json"

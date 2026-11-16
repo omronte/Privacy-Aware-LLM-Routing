@@ -1,12 +1,25 @@
 ﻿
 import re
+import os
 import torch
 import torch.nn.functional as F
 
-JUDGE_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
+JUDGE_MODEL = os.getenv(
+    "JUDGE_MODEL",
+    "allam-2-7b",
+)
 _judge_client = None
 
-def get_judge_client(hf_token):
+def get_judge_client(hf_token=None):
+    try:
+        from .openai_compatible import get_external_client
+    except ImportError:
+        from openai_compatible import get_external_client
+
+    model = os.getenv("JUDGE_MODEL", JUDGE_MODEL)
+    external_client = get_external_client(model)
+    if external_client:
+        return external_client
 
     from huggingface_hub import InferenceClient
 
@@ -15,7 +28,7 @@ def get_judge_client(hf_token):
     if _judge_client is None:
 
         _judge_client = InferenceClient(
-            model=JUDGE_MODEL,
+            model=model,
             provider="auto",
             token=hf_token,
             timeout=60
@@ -123,7 +136,8 @@ def evaluate_task_gain(
     query,
     gold_response,
     generated_response,
-    hf_token
+    hf_token,
+    strict=True,
 ):
     """
     Evaluate how well the generated response answers the query.
@@ -190,7 +204,7 @@ or
                     "content": prompt
                 }
             ],
-            max_tokens=10,
+            max_tokens=256,
             temperature=0.0,
             extra_body={
                 "chat_template_kwargs": {
@@ -200,8 +214,7 @@ or
         )
 
         if not response.choices:
-            print("LLM judge returned no choices.")
-            return 0.0
+            raise RuntimeError("LLM judge returned no choices.")
 
         message = response.choices[0].message
 
@@ -224,8 +237,10 @@ or
             match = re.match(r"([012])(?:\s|$)", first_line)
 
         if not match:
-            print(f"LLM judge returned invalid content: {content!r}")
-            return 0.0
+            raise RuntimeError(
+                f"LLM judge returned invalid content: {content!r}; "
+                f"choice={getattr(message, 'raw', {})!r}"
+            )
 
         result = match.group(1)
 
@@ -245,15 +260,43 @@ or
 
         if "402" in str(e) or "Payment Required" in str(e):
             raise RuntimeError(
-                "Hugging Face inference credits are exhausted. "
-                "Restore provider credits before continuing PPO training."
+                "Hugging Face judge inference credits are exhausted. "
+                "Restore provider credits before task-quality evaluation."
             ) from e
 
-        print(
-            f"LLM judge failed: {e}"
-        )
-
+        if strict:
+            raise RuntimeError(
+                f"LLM judge failed: {str(e)[:500]}"
+            ) from e
         return 0.0
+
+
+def evaluate_task_gain_local(
+    query,
+    gold_response,
+    generated_response,
+):
+    """Score answer similarity locally without a remote judge call."""
+    if not generated_response or not generated_response.strip():
+        return 0.0
+
+    if not gold_response or not gold_response.strip():
+        return 0.0
+
+    model = _get_sentence_transformer()
+    embeddings = model.encode(
+        [gold_response, generated_response],
+        convert_to_tensor=True,
+        normalize_embeddings=True,
+        show_progress_bar=False,
+    )
+    similarity = float(F.cosine_similarity(embeddings[0], embeddings[1], dim=0))
+
+    if similarity >= 0.75:
+        return 1.0
+    if similarity >= 0.45:
+        return 0.5
+    return 0.0
 
 
 

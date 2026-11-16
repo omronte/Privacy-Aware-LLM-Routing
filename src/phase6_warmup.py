@@ -3,6 +3,11 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
+try:
+    from .privacy import contains_pii
+except ImportError:
+    from privacy import contains_pii
+
 
 def generate_heuristic_labels(
     chunks: list[str],
@@ -12,12 +17,7 @@ def generate_heuristic_labels(
     labels = []
 
     for chunk in chunks:
-        chunk_lower = chunk.lower()
-
-        has_pii = any(
-            str(pii).lower() in chunk_lower
-            for pii in pii_entities
-        )
+        has_pii = contains_pii(chunk, pii_entities)
 
         labels.append(0.0 if has_pii else 1.0)
 

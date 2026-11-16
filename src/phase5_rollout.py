@@ -2,6 +2,12 @@
 from __future__ import annotations
 
 import torch
+import os
+
+try:
+    from .privacy import contains_pii, redact_pii
+except ImportError:
+    from privacy import contains_pii, redact_pii
 
 try:
     from .phase4_reward import (
@@ -22,7 +28,10 @@ except ImportError:
 
 LOCAL_MODEL = "Qwen/Qwen2.5-0.5B-Instruct"
 
-REMOTE_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
+REMOTE_MODEL = os.getenv(
+    "REMOTE_MODEL",
+    "openai/gpt-oss-120b",
+)
 
 
 
@@ -32,15 +41,7 @@ _remote_client = None
 
 def chunk_contains_pii(chunk: str, pii_entities: list[str]) -> bool:
     """Return True when a detected PII unit occurs in a chunk."""
-    if not chunk or not pii_entities:
-        return False
-
-    chunk_lower = chunk.lower()
-    return any(
-        str(entity).strip().lower() in chunk_lower
-        for entity in pii_entities
-        if str(entity).strip()
-    )
+    return contains_pii(chunk, pii_entities)
 
 
 def build_privacy_mask(chunks: list[str], pii_entities: list[str]) -> torch.Tensor:
@@ -125,9 +126,9 @@ def generate_hybrid_response(
     pii_forced_local = []
 
     for chunk, action in zip(chunks, actions):
-        contains_pii = chunk_contains_pii(chunk, pii_entities)
+        chunk_has_pii = chunk_contains_pii(chunk, pii_entities)
 
-        if contains_pii:
+        if chunk_has_pii:
             actual_action = 0
             pii_forced = True
         else:
@@ -156,21 +157,8 @@ def generate_hybrid_response(
     if remote_chunks:
         remote_context = " ".join(remote_chunks)
 
-        remote_text_lower = remote_context.lower()
-
-        leaked_entities = [
-            str(entity)
-            for entity in pii_entities
-            if str(entity).strip()
-            and str(entity).strip().lower()
-            in remote_text_lower
-        ]
-
-        if leaked_entities:
-            raise RuntimeError(
-                "PRIVACY VIOLATION: PII detected in remote payload: "
-                + repr(leaked_entities)
-            )
+        if contains_pii(remote_context, pii_entities):
+            raise RuntimeError("PRIVACY VIOLATION: PII detected in remote payload")
 
         remote_output = remote_model_fn(remote_context)
 
@@ -230,25 +218,37 @@ def make_local_llm():
 
     return _call
 
-def make_remote_llm(hf_token):
+def make_remote_llm(hf_token, strict=True):
 
     global _remote_client
 
-    if not hf_token:
+    try:
+        from .openai_compatible import get_external_client
+    except ImportError:
+        from openai_compatible import get_external_client
+
+    model = os.getenv("REMOTE_MODEL", REMOTE_MODEL)
+    external_client = get_external_client(model)
+    if external_client:
+        client = external_client
+    elif not hf_token:
         raise ValueError(
-            "Hugging Face token is required for remote inference."
+            "Set LLM_API_KEY and LLM_API_BASE for an external provider, "
+            "or provide HF_TOKEN for Hugging Face inference."
         )
 
-    if _remote_client is None:
+    if not external_client and _remote_client is None:
 
         from huggingface_hub import InferenceClient
 
         _remote_client = InferenceClient(
-            model=REMOTE_MODEL,
+            model=model,
             provider="auto",
             token=hf_token,
             timeout=60
         )
+
+    client = client if external_client else _remote_client
 
     def _call(text):
 
@@ -257,7 +257,7 @@ def make_remote_llm(hf_token):
 
         try:
 
-            response = _remote_client.chat.completions.create(
+            response = client.chat.completions.create(
                 messages=[
                     {
                         "role": "user",
@@ -288,14 +288,14 @@ def make_remote_llm(hf_token):
 
             if "402" in str(e) or "Payment Required" in str(e):
                 raise RuntimeError(
-                    "Hugging Face inference credits are exhausted. "
-                    "Restore provider credits before continuing PPO training."
+                    "Hugging Face remote-model inference credits are exhausted. "
+                    "Restore provider credits before end-to-end evaluation."
                 ) from e
 
-            print(
-                f"Remote LLM inference failed: {e}"
-            )
-
+            if strict:
+                raise RuntimeError(
+                    f"Remote LLM inference failed: {str(e)[:500]}"
+                ) from e
             return ""
 
     return _call
@@ -310,6 +310,9 @@ def execute_real_rollout(
     extractor,
     hf_token,
     debug=True,
+    local_llm_fn=None,
+    remote_llm_fn=None,
+    task_gain_fn=None,
 ):
     """Execute one privacy-constrained Privacy-R1 rollout."""
     chunks = chunk_text(query, chunker)
@@ -334,8 +337,8 @@ def execute_real_rollout(
         actions = distribution.sample()
         log_prob = distribution.log_prob(actions)
 
-    local_llm = make_local_llm()
-    remote_llm = make_remote_llm(hf_token)
+    local_llm = local_llm_fn or make_local_llm()
+    remote_llm = remote_llm_fn or make_remote_llm(hf_token, strict=True)
 
     (
         final_response,
@@ -350,12 +353,20 @@ def execute_real_rollout(
         remote_llm,
     )
 
-    task_gain = evaluate_task_gain(
-        query,
-        gold_response,
-        final_response,
-        hf_token,
-    )
+    if task_gain_fn:
+        task_gain = task_gain_fn(
+            redact_pii(query, pii_entities),
+            redact_pii(gold_response, pii_entities),
+            redact_pii(final_response, pii_entities),
+        )
+    else:
+        task_gain = evaluate_task_gain(
+            redact_pii(query, pii_entities),
+            redact_pii(gold_response, pii_entities),
+            redact_pii(final_response, pii_entities),
+            hf_token,
+            strict=True,
+        )
 
     privacy_leak = calculate_privacy_leak(
         pii_entities,

@@ -43,6 +43,54 @@
       "successful_rollouts": 100
     }
   },
+  "end_to_end_remote_evaluation": {
+    "all_local": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 0.0,
+      "routing_compliance": 0.18833333333333332,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
+    },
+    "all_remote": {
+      "privacy_leakage": 0.35,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 1.0,
+      "routing_compliance": 0.8116666666666665,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
+    },
+    "heuristic": {
+      "privacy_leakage": 0.03,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 0.8116666666666665,
+      "routing_compliance": 1.0,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
+    },
+    "trained_checkpoint": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 0.765,
+      "routing_compliance": 0.9533333333333335,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
+    },
+    "trained_checkpoint_end_to_end": {
+      "privacy_leakage": 0.0,
+      "task_gain": 0.97,
+      "reward": 1.1516666666666666,
+      "remote_routing_ratio": 0.72,
+      "routing_compliance": 0.9083333333333334,
+      "rollout_failures": 0,
+      "successful_rollouts": 100,
+      "privacy_reduction_vs_all_remote": 0.35
+    }
+  },
   "ablation": {
     "all_local": {
       "privacy_leakage": 0.0,
@@ -91,6 +139,9 @@
     "model_checkpoint": "models/privacy_r1_agent.pt",
     "reward_curve": "results/figures/reward_curve.png",
     "test_evaluation": "results/raw/test_evaluation.json",
+    "test_end_to_end": "results/raw/test_end_to_end.json",
+    "test_remote_000_050": "results/raw/test_remote_000_050.json",
+    "test_remote_050_100": "results/raw/test_remote_050_100.json",
     "ablation": "results/raw/ablation.json",
     "validation_evaluation": "results/raw/validation_evaluation.json"
   }

@@ -310,6 +310,7 @@ Privacy-Aware-LLM-Routing/
 ├── .env.example
 ├── .gitignore
 ├── evaluate.py
+├── LICENSE
 ├── main.py
 ├── Privacy_R1.ipynb
 ├── README.md
@@ -847,6 +848,4 @@ The implementation is intended for research, experimentation, and educational us
 
 # License
 
-No open-source license has currently been specified.
-
-If this project is released publicly for reuse, an appropriate license should be added to the repository.
+This project is licensed under the [MIT License](LICENSE).

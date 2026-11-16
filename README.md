@@ -276,14 +276,19 @@ Privacy-Aware-LLM-Routing/
 │   │   ├── routing_compliance_curve.png
 │   │   └── task_gain_curve.png
 │   │
-│   ├── ablation.json
-│   ├── ppo_summary.json
-│   ├── ppo_training.csv
-│   ├── routing_evaluation.json
-│   ├── test_end_to_end.json
-│   ├── test_evaluation.json
-│   ├── validation_evaluation.json
-│   └── final_output.json
+│   ├── raw/
+│   │   ├── ablation.json
+│   │   ├── ppo_summary.json
+│   │   ├── ppo_training.csv
+│   │   ├── routing_evaluation.json
+│   │   ├── test_end_to_end.json
+│   │   ├── test_evaluation.json
+│   │   ├── test_remote_000_050.json
+│   │   ├── test_remote_050_100.json
+│   │   └── validation_evaluation.json
+│   │
+│   └── tables/
+│       └── final_output.json
 │
 ├── scripts/
 │   └── prepare_clinical_data.py
@@ -304,10 +309,13 @@ Privacy-Aware-LLM-Routing/
 │
 ├── .env.example
 ├── .gitignore
+├── evaluate.py
 ├── main.py
 ├── Privacy_R1.ipynb
 ├── README.md
 ├── requirements.txt
+├── sanity_test.py
+├── sanitytest.py
 └── test_remote.py
 ```
 
@@ -510,7 +518,7 @@ python evaluation/routing_test.py
 ## 3. Policy Evaluation
 
 ```bash
-python evaluation/evaluate.py data/validation.json --output results/validation_evaluation.json
+python evaluation/evaluate.py data/validation.json --output results/raw/validation_evaluation.json
 ```
 
 Evaluate the saved routing checkpoint on the held-out test set. This uses the
@@ -518,7 +526,7 @@ production sentence chunker, the shared PII detector, and deterministic action
 selection after the hard privacy constraint:
 
 ```bash
-python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/test_evaluation.json
+python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/raw/test_evaluation.json
 ```
 
 To measure generated-answer quality as well as routing metrics, add
@@ -550,7 +558,7 @@ python evaluation/evaluate.py data/test.json --checkpoint models/privacy_r1_agen
 ## 4. Ablation Analysis
 
 ```bash
-python evaluation/ablation.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/ablation.json
+python evaluation/ablation.py data/test.json --checkpoint models/privacy_r1_agent.pt --device cpu --output results/raw/ablation.json
 ```
 
 The ablation report includes privacy leakage, remote routing ratio, routing
@@ -601,6 +609,11 @@ The table below summarizes the test set evaluation comparing baselines against t
 | **Heuristic Baseline** | 3.00% | 81.17% | 100.00% | — | — | 100/100 |
 | **Trained Privacy-R1 (Policy Evaluation)** | **0.00%** | **76.50%** | **95.33%** | — | — | 100/100 |
 | **Trained Privacy-R1 (End-to-End Remote)** | **0.00%** | **72.00%** | **90.83%** | **0.97** | **1.1517** | **100/100** |
+
+> [!NOTE]
+> **Why are Task Gain and Reward marked with `—` in the first four rows?**
+> - **Rows 1–4 (Pure Routing Policy Evaluation):** These evaluate chunk-level routing decisions (privacy leakage, remote offload percentage, and routing compliance) deterministically without calling generative LLMs or the LLM Judge. Because no text answer is synthesized, there is no generated response to score — therefore Task Gain and Reward are not applicable (`—`).
+> - **Row 5 (End-to-End Remote Rollout):** Runs the full generative pipeline across all 100 test samples — generating text locally with `Qwen2.5-0.5B-Instruct` for sensitive chunks, calling the remote LLM (`openai/gpt-oss-120b` via Groq) for safe chunks, merging outputs, and scoring answer accuracy with the remote LLM Judge (`allam-2-7b`). It demonstrates an outstanding **0.97 (97%) task gain** and **1.1517 reward** with **0.00% privacy leakage**.
 
 > **Key Findings:**
 > - **Zero Privacy Leakage (0.00%):** The hard privacy constraint guarantees that sensitive/PII data is never leaked to the remote provider.
@@ -689,13 +702,19 @@ results/
 │   ├── routing_compliance_curve.png
 │   └── task_gain_curve.png
 │
-├── ablation.json
-├── ppo_summary.json
-├── ppo_training.csv
-├── routing_evaluation.json
-├── test_evaluation.json
-├── validation_evaluation.json
-└── final_output.json
+├── raw/
+│   ├── ablation.json
+│   ├── ppo_summary.json
+│   ├── ppo_training.csv
+│   ├── routing_evaluation.json
+│   ├── test_end_to_end.json
+│   ├── test_evaluation.json
+│   ├── test_remote_000_050.json
+│   ├── test_remote_050_100.json
+│   └── validation_evaluation.json
+│
+└── tables/
+    └── final_output.json
 ```
 
 ---

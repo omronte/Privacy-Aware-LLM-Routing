@@ -2,16 +2,37 @@
   "all_local": {
     "privacy_leakage": 0.0,
     "task_gain": 0.0,
-    "reward": 0.0
+    "reward": 0.0,
+    "remote_routing_ratio": 0.0,
+    "routing_compliance": 0.18833333333333332,
+    "rollout_failures": 0,
+    "successful_rollouts": 100
   },
   "all_remote": {
-    "privacy_leakage": 0.6,
+    "privacy_leakage": 0.35,
     "task_gain": 0.0,
-    "reward": 0.0
+    "reward": 0.0,
+    "remote_routing_ratio": 1.0,
+    "routing_compliance": 0.8116666666666665,
+    "rollout_failures": 0,
+    "successful_rollouts": 100
   },
   "heuristic": {
+    "privacy_leakage": 0.03,
+    "task_gain": 0.0,
+    "reward": 0.0,
+    "remote_routing_ratio": 0.8116666666666665,
+    "routing_compliance": 1.0,
+    "rollout_failures": 0,
+    "successful_rollouts": 100
+  },
+  "trained_checkpoint": {
     "privacy_leakage": 0.0,
     "task_gain": 0.0,
-    "reward": 0.0
+    "reward": 0.0,
+    "remote_routing_ratio": 0.765,
+    "routing_compliance": 0.9533333333333333,
+    "rollout_failures": 0,
+    "successful_rollouts": 100
   }
 }

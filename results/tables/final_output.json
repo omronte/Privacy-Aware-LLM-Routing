@@ -1,31 +1,46 @@
 {
   "device": "cpu",
   "dataset_sizes": {
-    "train": 30,
-    "validation": 10,
-    "test": 10
+    "train": 300,
+    "validation": 100,
+    "test": 100
   },
   "training": {
-    "steps_requested": 3,
-    "episodes_completed": 3,
-    "summary": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_summary.json",
+    "steps_requested": 30,
+    "episodes_completed": 30,
+    "summary": "results/raw/ppo_summary.json",
     "model": "models\\privacy_r1_agent.pt"
   },
   "test_evaluation": {
     "all_local": {
       "privacy_leakage": 0.0,
       "task_gain": 0.0,
-      "reward": 0.0
+      "reward": 0.0,
+      "remote_routing_ratio": 0.0,
+      "routing_compliance": 0.18833333333333332
     },
     "all_remote": {
-      "privacy_leakage": 0.6,
+      "privacy_leakage": 0.35,
       "task_gain": 0.0,
-      "reward": 0.0
+      "reward": 0.0,
+      "remote_routing_ratio": 1.0,
+      "routing_compliance": 0.8116666666666665
     },
     "heuristic": {
+      "privacy_leakage": 0.03,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 0.8116666666666665,
+      "routing_compliance": 1.0
+    },
+    "trained_checkpoint": {
       "privacy_leakage": 0.0,
       "task_gain": 0.0,
-      "reward": 0.0
+      "reward": 0.0,
+      "remote_routing_ratio": 0.765,
+      "routing_compliance": 0.9533333333333333,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
     }
   },
   "ablation": {
@@ -33,28 +48,50 @@
       "privacy_leakage": 0.0,
       "task_gain": 0.0,
       "reward": 0.0,
-      "privacy_reduction_vs_all_remote": 0.6
+      "remote_routing_ratio": 0.0,
+      "routing_compliance": 0.18833333333333332,
+      "rollout_failures": 0,
+      "successful_rollouts": 100,
+      "privacy_reduction_vs_all_remote": 0.35
     },
     "all_remote": {
-      "privacy_leakage": 0.6,
+      "privacy_leakage": 0.35,
       "task_gain": 0.0,
       "reward": 0.0,
+      "remote_routing_ratio": 1.0,
+      "routing_compliance": 0.8116666666666665,
+      "rollout_failures": 0,
+      "successful_rollouts": 100,
       "privacy_reduction_vs_all_remote": 0.0
     },
     "heuristic": {
+      "privacy_leakage": 0.03,
+      "task_gain": 0.0,
+      "reward": 0.0,
+      "remote_routing_ratio": 0.8116666666666665,
+      "routing_compliance": 1.0,
+      "rollout_failures": 0,
+      "successful_rollouts": 100,
+      "privacy_reduction_vs_all_remote": 0.31999999999999995
+    },
+    "trained_checkpoint": {
       "privacy_leakage": 0.0,
       "task_gain": 0.0,
       "reward": 0.0,
-      "privacy_reduction_vs_all_remote": 0.6
+      "remote_routing_ratio": 0.765,
+      "routing_compliance": 0.9533333333333333,
+      "privacy_reduction_vs_all_remote": 0.35,
+      "rollout_failures": 0,
+      "successful_rollouts": 100
     }
   },
   "files": {
-    "training_csv": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_training.csv",
-    "training_summary": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ppo_summary.json",
-    "model_checkpoint": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\models\\privacy_r1_agent.pt",
-    "reward_curve": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\figures\\reward_curve.png",
-    "test_evaluation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\test_evaluation.json",
-    "ablation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\ablation.json",
-    "validation_evaluation": "C:\\Users\\OM\\OneDrive\\Desktop\\Privacy-Aware-LLM-Routing\\results\\raw\\validation_evaluation.json"
+    "training_csv": "results/raw/ppo_training.csv",
+    "training_summary": "results/raw/ppo_summary.json",
+    "model_checkpoint": "models/privacy_r1_agent.pt",
+    "reward_curve": "results/figures/reward_curve.png",
+    "test_evaluation": "results/raw/test_evaluation.json",
+    "ablation": "results/raw/ablation.json",
+    "validation_evaluation": "results/raw/validation_evaluation.json"
   }
 }

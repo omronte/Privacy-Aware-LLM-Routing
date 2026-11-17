@@ -40,7 +40,11 @@ from src.phase2_preprocessing import (
     initialize_chunker,
 )
 from src.phase3_agent import PrivacyR1Agent
-from src.phase4_reward import evaluate_task_gain_local
+from evaluation.llm_judge import (
+    LLMJudge,
+    evaluate_task_gain,
+    evaluate_task_gain_local,
+)
 from src.phase5_rollout import (
     apply_privacy_constraint,
     build_privacy_mask,

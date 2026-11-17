@@ -36,3 +36,4 @@ anaconda_projects/
 
 # Dev / scratch scripts
 scratch/
+*.docx

@@ -257,6 +257,7 @@ Privacy-Aware-LLM-Routing/
 │   ├── ablation.py
 │   ├── baselines.py
 │   ├── evaluate.py
+│   ├── llm_judge.py
 │   ├── merge_evaluations.py
 │   ├── metrics.py
 │   ├── plot_results.py
@@ -593,6 +594,16 @@ python test_remote.py
 
 ```bash
 python -m unittest discover -s tests -v
+```
+
+---
+
+## 9. Automated LLM Judge Evaluation
+
+Test the automated LLM Judge scoring directly:
+
+```bash
+python evaluation/llm_judge.py
 ```
 
 ---

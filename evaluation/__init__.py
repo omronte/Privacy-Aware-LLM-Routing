@@ -1,4 +1,4 @@
-﻿"""Evaluation suite for Privacy-Aware LLM Routing."""
+"""Evaluation suite for Privacy-Aware LLM Routing."""
 
 from evaluation.llm_judge import LLMJudge
 
